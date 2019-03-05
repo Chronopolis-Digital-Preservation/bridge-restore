@@ -27,7 +27,7 @@ class YamlConfig() : RestoreConfig {
     private val dto: ConfigDto
 
     init {
-        val default = "/usr/local/chronopolis/bridge-restore/restore.yaml"
+        val default = "/usr/local/chronopolis/restore/bridge-restore.yaml"
         val path = System.getProperty("restore.config") ?: default
         val input = File(path)
 

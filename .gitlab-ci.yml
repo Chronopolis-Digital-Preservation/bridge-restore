@@ -61,12 +61,12 @@ cache:
 # Validate merge requests using JDK8
 validate:jdk8:
   <<: *validate
-  image: maven:3.3.9-jdk-8
+  image: maven:3-jdk-8
 
 # Verify merge requests using JDK8
 verify:jdk8:
   <<: *verify
-  image: maven:3.3.9-jdk-8
+  image: maven:3-jdk-8
   artifacts:
     expire_in: 2 days
     untracked: true
@@ -86,10 +86,9 @@ deploy:jdk8:
   script:
     - 'mvn $MAVEN_CLI_OPTS $DB_PROPERTIES deploy'
   only:
-    - master
     - develop
     - /^release-.*$/
-  image: maven:3.3.9-jdk-8
+  image: maven:3-jdk-8
 
 .rpm: &rpm
   before_script:
@@ -97,10 +96,9 @@ deploy:jdk8:
     - apt-get install -y rpm
   stage: deploy
   only:
-    - master
     - develop
     - /^release-.*$/
-  image: maven:3.3.9-jdk-8
+  image: maven:3-jdk-8
 
 rpm:
   <<: *rpm

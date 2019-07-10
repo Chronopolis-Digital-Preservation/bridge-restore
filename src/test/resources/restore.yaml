@@ -1,0 +1,22 @@
+db:
+  url: jdbc:mysql://localhost/bridge
+  username: jooq
+  password: jooq
+
+bridge:
+  endpoint: http://localhost:8080/bridge
+  username: bridge
+  password: bridge
+
+smtp:
+  to: unit-test@bridge-restore.umiacs.umd.edu
+  from: restore@chron-mail.umiacs.umd.edu
+  send: true
+
+storage:
+  duracloud: /scratch0/testing/restore/duracloud
+  chronopolis: /scratch0/testing/restore/chronopolis
+
+log:
+  file: restore.log
+  level: DEBUG

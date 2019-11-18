@@ -8,6 +8,14 @@
     <artifactId>bridge-restore</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <distributionManagement>
+        <repository>
+            <id>ucsd.artifactory</id>
+            <name>lib-artifacts-releases</name>
+            <url>https://lib-artifacts.ucsd.edu/artifactory/libs-release</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <jooq.version>3.11.9</jooq.version>
         <junit.version>5.4.0</junit.version>
@@ -154,8 +162,9 @@
             <url>https://jcenter.bintray.com</url>
         </repository>
         <repository>
-            <id>adapt</id>
-            <url>https://scm.umiacs.umd.edu/adapt/repository/maven-releases/</url>
+            <id>ucsd.artifactory</id>
+            <name>lib-artifacts-releases</name>
+            <url>https://lib-artifacts.ucsd.edu/artifactory/libs-release</url>
         </repository>
     </repositories>
 
@@ -209,7 +218,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
 
             <plugin>
                 <!-- Specify the maven code generator plugin -->
